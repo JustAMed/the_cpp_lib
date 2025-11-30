@@ -1,0 +1,10 @@
+# Object files
+*.o
+
+# Executables
+library
+a.out
+
+# MacOS junk
+.DS_Store
+
