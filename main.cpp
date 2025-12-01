@@ -1,30 +1,46 @@
 #include <iostream>
 #include <string>
-#include <limits>
-#include "book.h"
+// #include <vector>
+// #include "include/book.h"
 
 using std::cin;
 using std::cout;
 using std::string;
 using std::endl;
+// using std::vector;
 
 int main() {
-  int identification;
-  string name, guy;
-  cout << "Book ID: ";
-  cin >> identification;
-  cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  // init
+  // vector<Book> library;
 
-  cout << "Name of the book: ";
-  std::getline(cin, name);
+  //menu
+  while (true) {
+    int choice;
+    cout << "******************** THE C++ LIBRARY ***************" << endl;
+    cout << "1. Add book" << endl << "2. Remove Book" << endl;
+    cout << "3. Edit Book" << endl << "4. Borrow/Return book" << endl;
+    cout << "Else: Exit" << endl << "Input: ";
 
-  cout << "Name of the author: ";
-  std::getline(cin, guy);
+    cin >> choice;
 
-  Book book1(identification, name, guy);
-
-  cout << book1.getTitle() << ", by " << book1.getAuthor();
-  cout << ", ID " << book1.getId() << "." << endl;
-
+    switch (choice) {
+      case 1:
+        cout << "Book de add";
+        break;
+      case 2:
+        cout << "Book de remove";
+        break;
+      case 3:
+        cout << "Book de edit";
+        break;
+      case 4:
+        cout << "Book de borrow/return";
+        break;
+      default:
+        cout << "de exit";
+        return 0;
+    }
+  }
+  
   return 0;
 }

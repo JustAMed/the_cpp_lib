@@ -1,6 +1,6 @@
 # Compiler & flags
 CXX = clang++
-CXXFLAGS = -std=c++20 -Wall -Wextra -O2
+CXXFLAGS = -std=c++20 -Wall -Wextra -O2 -Iinclude
 
 # All .cpp files in folder
 SRC = $(wildcard *.cpp)
@@ -9,7 +9,7 @@ SRC = $(wildcard *.cpp)
 OBJ = $(SRC:.cpp=.o)
 
 # Final executable name
-TARGET = library
+TARGET = the_cpp_library
 
 all: $(TARGET)
 
@@ -19,7 +19,7 @@ $(TARGET): $(OBJ)
 
 # Compile each object file
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $<
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Run the program after building
 run: $(TARGET)
