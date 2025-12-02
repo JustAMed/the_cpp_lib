@@ -1,4 +1,5 @@
 #include "include/book.h"
+#include <iostream>
 #include <string>
 using std::string;
 
@@ -22,9 +23,22 @@ bool Book::isBorrowed() const {
 
 // borrow it
 void Book::borrow() {
-  borrowed = true;
+  if (borrowed == true) {
+    std::cout << "That's already borrowed";
+  }
+  else {
+    borrowed = true;
+    std::cout << "Borrowed!";
+  }
 }
 
 void Book::returnBook() {
+  if (borrowed == false) {
+    std::cout << "... why are you returning a returned book?";
+  }
+  else {
+    borrowed = false;
+    std::cout << "Returtned!";
+  }
   borrowed = false;
 }
